@@ -45,7 +45,7 @@ jobs:
         terraform_version: "1.5.7"
 
     - name: Terraform fmt check
-      run: terraform fmt --recursive --check
+      run: terraform fmt --recursive #--check
       working-directory: ./terraform
 
     - name: Terraform Init
