@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
 
 env:
-  AWS_ACCOUNT: ${{ vars.account-id }}
+  AWS_ACCOUNT: ${{ vars.accountid }}
   AWS_REGION: "us-east-1"
   APP_NAME: "linuxtips-app"
   CLUSTER_NAME: "linuxtips-ecs-cluster"
