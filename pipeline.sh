@@ -1,13 +1,11 @@
 #!/bin/bash
-
-# SETUP INICIAL
 set -e
 
-export AWS_ACCOUNT="181560427716"
+export AWS_ACCOUNT="590183940398"
 export AWS_PAGER=""
 export APP_NAME="linuxtips-app"
 export CLUSTER_NAME="linuxtips-ecs-cluster"
-export BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+export BRANCH_NAME="dev"#$(git rev-parse --abbrev-ref HEAD)
 
 # CI DA APP
 
