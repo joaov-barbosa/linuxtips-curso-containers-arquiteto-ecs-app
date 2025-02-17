@@ -14,4 +14,4 @@ COPY --from=builder /root/src/app/main ./
 
 EXPOSE 8080
 
-ENTRYPOINT ["./main"
+ENTRYPOINT ["./main"]
