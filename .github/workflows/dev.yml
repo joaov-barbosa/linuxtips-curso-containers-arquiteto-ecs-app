@@ -155,7 +155,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: ECS Wait Deployment Complete
-      run: aws ecs wait services-stable --cluster ${{ env.CLUSTER_NAME }} --services  ${{ env.APP_NAME }}
+      run: aws ecs wait services-stable --cluster ${{ env.CLUSTER_NAME }} --services chip #${{ env.APP_NAME }}
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
