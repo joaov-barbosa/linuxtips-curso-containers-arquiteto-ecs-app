@@ -33,9 +33,15 @@ variable "service_healthcheck" {
   description = "Configurações do health check para o serviço, como caminho e protocolo."
 }
 
+#variable "service_launch_type" {
+ # type        = string
+  #description = "Tipo de lançamento do serviço no ECS, podendo ser 'FARGATE' ou 'EC2'."
+#}
 variable "service_launch_type" {
-  type        = string
-  description = "Tipo de lançamento do serviço no ECS, podendo ser 'FARGATE' ou 'EC2'."
+  type = list(object({
+    capacity_provider = string
+    weight            = number
+  }))
 }
 
 variable "service_hosts" {
