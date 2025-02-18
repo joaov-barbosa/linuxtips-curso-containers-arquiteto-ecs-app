@@ -13,7 +13,7 @@ service_memory = 512
 #service_launch_type = "FARGATE"
 service_launch_type = [
   {
-   capacity_provider = "linuxtips-ecs-cluster-on-demand"
+   capacity_provider = "FARGATE"
    weight            = 100
   }
  # {
