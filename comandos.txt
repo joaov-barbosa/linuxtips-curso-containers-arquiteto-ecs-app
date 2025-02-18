@@ -6,4 +6,9 @@ terraform init -backend-config=environment/dev/backend.tfvars
 terraform plan -var-file=environment/dev/terraform.tfvars -v
 ar container_image=nginx:latest
 
+terraform apply --auto-approve -var-file=environment/dev/terraform.tfvars -var container_image=nginx:latest
+
 curl linuxtips-ecs-cluster-ingress-1236385083.us-east-1.elb.amazonaws.com -H "Host: chip.linuxtips.demo"
+
+
+curl linuxtips-ecs-cluster-ingress-1236385083.us-east-1.elb.amazonaws.com/version -H "Host: chip.linuxtips.demo"
