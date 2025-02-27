@@ -1,6 +1,6 @@
 module "service" {
   #source                     = "/mnt/c/Users/Joao Barbosa/Desktop/arquiteto-containers-linutipx/linuxtips-curso-containers-arquiteto-ecs-service-module"
-  source                      = "github.com/joaov-barbosa/linuxtips-curso-containers-arquiteto-ecs-service-module?ref=v.1.1"
+  source                      = "github.com/joaov-barbosa/linuxtips-curso-containers-arquiteto-ecs-service-module?ref=ssm"
   region                      = var.region
   cluster_name                = var.cluster_name
   service_name                = var.service_name
@@ -51,6 +51,26 @@ module "service" {
 
   alb_arn                      = data.aws_ssm_parameter.alb.value
   scale_tracking_requests      = var.scale_tracking_requests
+
+  secrets = [
+    {
+      name      = "VARIAVEL_COM_VALOR_DO_SSM"
+      valueFrom = aws_ssm_parameter.teste.arn
+    },
+    {
+      name      = "VARIAVEL_COM_VALOR_DO_SECRETS"
+      valueFrom = aws_secretsmanager_secret.teste.arn
+    }
+  ]
+ efs_volumes = [
+    {
+      volume_name      = "volume-de-exemplo"
+      file_system_id   = aws_efs_file_system.main.id
+      file_system_root = "/"
+      mount_point      = "/mnt/efs"
+      read_only        = false
+    }
+  ]
 }
 
 #module "network" {
