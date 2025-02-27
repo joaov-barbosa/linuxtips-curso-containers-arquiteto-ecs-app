@@ -1,6 +1,6 @@
 module "service" {
-  source                     = "/mnt/c/Users/Joao Barbosa/Desktop/arquiteto-containers-linutipx/linuxtips-curso-containers-arquiteto-ecs-service-module"
-  #source                      = "github.com/joaov-barbosa/linuxtips-curso-containers-arquiteto-ecs-service-module?ref=v.1.1"
+  #source                     = "/mnt/c/Users/Joao Barbosa/Desktop/arquiteto-containers-linutipx/linuxtips-curso-containers-arquiteto-ecs-service-module"
+  source                      = "github.com/joaov-barbosa/linuxtips-curso-containers-arquiteto-ecs-service-module?ref=v.1.1"
   region                      = var.region
   cluster_name                = var.cluster_name
   service_name                = var.service_name
