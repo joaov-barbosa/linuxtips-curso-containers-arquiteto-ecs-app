@@ -40,7 +40,8 @@ ssm_listener = "/linuxtips/ecs/lb/internal/listerner"
 ssm_alb      = "/linuxtips/ecs/lb/internal/id"
 
 service_hosts = [
-  "chip.linuxtips.demo"
+  #"chip.linuxtips.demo"
+  "app.linuxtips-ecs-cluster.internal.com"
 ]
 
 environment_variables = [
