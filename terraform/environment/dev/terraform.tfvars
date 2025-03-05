@@ -13,7 +13,7 @@ service_memory = 512
 #service_launch_type = "FARGATE"
 service_launch_type = [
   {
-   capacity_provider = "linuxtips-ecs-cluster-on-demand"
+   capacity_provider = "FARGATE"
    weight            = 100
   }
  # {
@@ -37,7 +37,8 @@ ssm_private_subnet_3 = "/linuxtips-vps/vpc/subnet_private_1c"
 ssm_alb="/linuxtips/ecs/lb/id"
 
 service_hosts = [
-  "chip.linuxtips.demo"
+  #"chip.linuxtips.demo"
+  "app.linuxtips-ecs-cluster.internal.com"
 ]
 
 environment_variables = [
