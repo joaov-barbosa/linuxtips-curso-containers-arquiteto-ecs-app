@@ -37,7 +37,8 @@ ssm_private_subnet_3 = "/linuxtips-vps/vpc/subnet_private_1c"
 ssm_alb="/linuxtips/ecs/lb/id"
 
 service_hosts = [
-  "chip.linuxtips.demo"
+  #"chip.linuxtips.demo"
+  "app.linuxtips-ecs-cluster.internal.com"
 ]
 
 environment_variables = [
