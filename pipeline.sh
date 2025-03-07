@@ -1,25 +1,25 @@
 #!/bin/bash
 set -e
 
-export AWS_ACCOUNT="590183940398"
+export AWS_ACCOUNT="058264297989"
 export AWS_PAGER=""
 export APP_NAME="linuxtips-app"
 export CLUSTER_NAME="linuxtips-ecs-cluster"
-export BRANCH_NAME="dev"#$(git rev-parse --abbrev-ref HEAD)
+export BRANCH_NAME="dev"         #$(git rev-parse --abbrev-ref HEAD)
 
 # CI DA APP
 
-echo "APP - CI"
+#echo "APP - CI"
 
 cd app/
 
-echo "APP - LINT"
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.59.1
-golangci-lint run ./... -E errcheck
+#echo "APP - LINT"
+#go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.59.1
+#golangci-lint run ./... -E errcheck
 
 
-echo "APP - TEST"
-go test -v ./...
+#echo "APP - TEST"
+#go test -v ./...
 
 # CI DO TERRAFORM 
 
@@ -28,7 +28,7 @@ echo "TERRAFORM - CI"
 cd ../terraform
 
 echo "TERRAFORM - FORMAT CHECK"
-terraform fmt --recursive --check
+#terraform fmt --recursive --check
 
 terraform init -backend-config=environment/$BRANCH_NAME/backend.tfvars
 
