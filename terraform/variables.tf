@@ -124,6 +124,8 @@ variable "scale_tracking_requests" {}
 
 variable "ssm_alb"{}
 
-variable "container_image" {}
+variable "container_image" {
+  default = "fidelissauro/chip:latest"
+}
 
 variable "ssm_service_discovery_namespace" {}

@@ -4,4 +4,8 @@ terraform plan -var-file=environment/dev/terraform.tfvars
 terraform init -backend-config=environment/dev/backend.tfvars
 
 terraform plan -var-file=environment/dev/terraform.tfvars -v
+
 ar container_image=nginx:latest
+
+ESCREVE ARQUIVO
+curl -X POST url/arquivos -d "vaaaaaaaaaaaaaai!!!!!"

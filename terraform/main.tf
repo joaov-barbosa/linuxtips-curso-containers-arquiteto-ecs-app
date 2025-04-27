@@ -1,6 +1,5 @@
 module "service" {
-  #source                     = "/mnt/c/Users/Joao Barbosa/Desktop/arquiteto-containers-linutipx/linuxtips-curso-containers-arquiteto-ecs-service-module"
-  source                      = "github.com/joaov-barbosa/linuxtips-curso-containers-arquiteto-ecs-service-module?ref=discovery"
+  source                      = "github.com/joaov-barbosa/linuxtips-curso-containers-arquiteto-ecs-service-module?ref=build"
   region                      = var.region
   cluster_name                = var.cluster_name
   service_name                = var.service_name
@@ -49,9 +48,10 @@ module "service" {
 
   scale_tracking_cpu           = var.scale_tracking_cpu
 
+
   alb_arn                      = data.aws_ssm_parameter.alb.value
   scale_tracking_requests      = var.scale_tracking_requests
-
+  deployment_controller        = "CODE_DEPLOY"
   secrets = [
     {
       name      = "VARIAVEL_COM_VALOR_DO_SSM"
